@@ -1,0 +1,127 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2745,        118]
+NotebookOptionsPosition[      2103,         89]
+NotebookOutlinePosition[      2457,        105]
+CellTagsIndexPosition[      2414,        102]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 25", "Title"],
+
+Cell["\<\
+The Fibonacci sequence is defined by the recurrence relation:
+
+Fn = Fn\[Minus]1 + Fn\[Minus]2, where F1 = 1 and F2 = 1.
+Hence the first 12 terms will be:
+
+F1 = 1
+F2 = 1
+F3 = 2
+F4 = 3
+F5 = 5
+F6 = 8
+F7 = 13
+F8 = 21
+F9 = 34
+F10 = 55
+F11 = 89
+F12 = 144
+The 12th term, F12, is the first term to contain three digits.
+
+What is the first term in the Fibonacci sequence to contain 1000 digits?\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IntegerDigits", "[", 
+   RowBox[{"Fibonacci", "[", "4000", "]"}], "]"}], "//", "Length"}]], "Input"],
+
+Cell[BoxData["836"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Module", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"n", "=", "4000"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"While", "[", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"IntegerDigits", "[", 
+         RowBox[{"Fibonacci", "[", "n", "]"}], "]"}], "]"}], "=!=", "1000"}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"n", "++"}]}], "\[IndentingNewLine]", "]"}], ";", 
+    "\[IndentingNewLine]", "n"}]}], "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData["4782"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"IntegerDigits", "[", 
+   RowBox[{"Fibonacci", "[", "4782", "]"}], "]"}], "//", "Length"}]], "Input"],
+
+Cell[BoxData["1000"], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{100, Automatic}, {45, Automatic}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 41, 0, 92, "Title"],
+Cell[623, 24, 409, 21, 391, "Text"],
+Cell[CellGroupData[{
+Cell[1057, 49, 135, 3, 28, "Input"],
+Cell[1195, 54, 30, 0, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1262, 59, 573, 14, 148, "Input"],
+Cell[1838, 75, 31, 0, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1906, 80, 135, 3, 28, "Input"],
+Cell[2044, 85, 31, 0, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

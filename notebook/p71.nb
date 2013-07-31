@@ -1,0 +1,104 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2343,         95]
+NotebookOptionsPosition[      1856,         72]
+NotebookOutlinePosition[      2230,         89]
+CellTagsIndexPosition[      2187,         86]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"fractions", "=", 
+     RowBox[{"With", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"N", "=", "1000000"}], "}"}], ",", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{"Rational", "[", 
+          RowBox[{
+           RowBox[{"Floor", "[", 
+            RowBox[{"3", "*", 
+             RowBox[{"d", "/", "7"}]}], "]"}], ",", "d"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"d", ",", "9", ",", "N"}], "}"}]}], "]"}]}], "]"}]}], ";"}],
+    ")"}], "//", "Timing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "9.1388730000000002462456905050203204155`6.981492555396477", ",", "Null"}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"reducedProperFractions", "=", 
+   RowBox[{"DeleteDuplicates", "@", 
+    RowBox[{"Sort", "[", 
+     RowBox[{"Simplify", "/@", "f"}], "]"}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"reducedProperFractions", "[", 
+  RowBox[{"[", 
+   RowBox[{
+    RowBox[{"-", "3"}], ";;"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["428567", "999990"], ",", 
+   FractionBox["428570", "999997"], ",", 
+   FractionBox["3", "7"]}], "}"}]], "Output"]
+}, Open  ]]
+},
+WindowSize->{1873, 1156},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 576, 18, 28, "Input"],
+Cell[1158, 42, 138, 4, 28, "Output"]
+}, Open  ]],
+Cell[1311, 49, 194, 5, 28, "Input"],
+Cell[CellGroupData[{
+Cell[1530, 58, 138, 4, 28, "Input"],
+Cell[1671, 64, 169, 5, 48, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

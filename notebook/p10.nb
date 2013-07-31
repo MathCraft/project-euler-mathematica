@@ -1,0 +1,98 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2067,         89]
+NotebookOptionsPosition[      1443,         61]
+NotebookOutlinePosition[      1817,         78]
+CellTagsIndexPosition[      1774,         75]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 10", "Title"],
+
+Cell["Summation of primes", "Subtitle"],
+
+Cell["\<\
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"n", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"While", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Prime", "[", "n", "]"}], "<", "2000000"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"n", "++"}]}], "\[IndentingNewLine]", "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["n"], "Input"],
+
+Cell[BoxData["148934"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"Prime", "/@", 
+   RowBox[{"Range", "[", 
+    RowBox[{"n", "-", "1"}], "]"}]}], "]"}]], "Input"],
+
+Cell[BoxData["142913828922"], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1001, 1141},
+WindowMargins->{{1, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 41, 0, 92, "Title"],
+Cell[623, 24, 39, 0, 51, "Subtitle"],
+Cell[665, 26, 128, 4, 68, "Text"],
+Cell[796, 32, 308, 8, 97, "Input"],
+Cell[CellGroupData[{
+Cell[1129, 44, 27, 0, 28, "Input"],
+Cell[1159, 46, 33, 0, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1229, 51, 144, 4, 28, "Input"],
+Cell[1376, 57, 39, 0, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

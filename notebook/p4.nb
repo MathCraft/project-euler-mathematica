@@ -1,0 +1,150 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      3901,        141]
+NotebookOptionsPosition[      3335,        116]
+NotebookOutlinePosition[      3709,        133]
+CellTagsIndexPosition[      3666,        130]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pairs", "=", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"f1", ",", "f2"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"f1", ",", "999", ",", "100", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"f2", ",", "999", ",", "100", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"factors", "=", 
+   RowBox[{"Join", "@@", 
+    RowBox[{"SortBy", "[", 
+     RowBox[{"pairs", ",", 
+      RowBox[{
+       RowBox[{"Total", "@", "#"}], "&"}]}], "]"}]}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"palindrome", "=", 
+   RowBox[{"First", "@", 
+    RowBox[{"Last", "@", 
+     RowBox[{"Reap", "@", 
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"With", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"s", "=", 
+            RowBox[{"IntegerString", "[", 
+             RowBox[{"Times", "@@", "p"}], "]"}]}], "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{"s", "===", 
+              RowBox[{"StringReverse", "[", "s", "]"}]}], ",", 
+             RowBox[{"Sow", "[", 
+              RowBox[{"{", 
+               RowBox[{"p", ",", 
+                RowBox[{"Times", "@@", "p"}]}], "}"}], "]"}]}], "]"}], 
+           ";"}]}], "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+        
+        RowBox[{"{", 
+         RowBox[{"p", ",", "factors"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}]}]}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Composition", "[", "\[IndentingNewLine]", 
+   RowBox[{"Last", ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SortBy", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", 
+           RowBox[{"-", "1"}]}], "]"}], "]"}], "&"}]}], "]"}], "&"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"GatherBy", "[", 
+      RowBox[{"#", ",", "Last"}], "]"}], "&"}]}], "\[IndentingNewLine]", 
+   "]"}], "[", "palindrome", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"913", ",", "993"}], "}"}], ",", "906609"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"993", ",", "913"}], "}"}], ",", "906609"}], "}"}]}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Max", "[", "palindrome", "]"}]], "Input"],
+
+Cell[BoxData["906609"], "Output"]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{28, Automatic}, {Automatic, 64}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 491, 13, 97, "Input"],
+Cell[1051, 35, 220, 7, 28, "Input"],
+Cell[1274, 44, 1026, 28, 131, "Input"],
+Cell[CellGroupData[{
+Cell[2325, 76, 555, 16, 97, "Input"],
+Cell[2883, 94, 298, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3218, 110, 65, 1, 28, "Input"],
+Cell[3286, 113, 33, 0, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

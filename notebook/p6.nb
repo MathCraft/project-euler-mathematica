@@ -1,0 +1,126 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2799,        117]
+NotebookOptionsPosition[      2241,         91]
+NotebookOutlinePosition[      2616,        108]
+CellTagsIndexPosition[      2573,        105]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sum", "[", 
+     RowBox[{"n", ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "N"}], "}"}]}], "]"}], "^", "2"}], "-", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"n", "^", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "N"}], "}"}]}], "]"}]}], "//", "Expand"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox["N", "6"]}], "-", 
+  FractionBox[
+   SuperscriptBox["N", "2"], "4"], "+", 
+  FractionBox[
+   SuperscriptBox["N", "3"], "6"], "+", 
+  FractionBox[
+   SuperscriptBox["N", "4"], "4"]}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"N", "=", "100"}], "}"}], ",", 
+   RowBox[{
+    FractionBox["1", "12"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "N"}], ")"}], "*", " ", "N", "*", " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", "N"}], ")"}], "*", " ", 
+    RowBox[{"(", 
+     RowBox[{"2", "+", 
+      RowBox[{"3", " ", "N"}]}], ")"}]}]}], "]"}]], "Input"],
+
+Cell[BoxData["25164150"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ReplaceAll", "[", 
+  RowBox[{
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Sum", "[", 
+       RowBox[{"n", ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "N"}], "}"}]}], "]"}], "^", "2"}], "-", 
+     RowBox[{"Sum", "[", 
+      RowBox[{
+       RowBox[{"n", "^", "2"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "N"}], "}"}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"N", "\[Rule]", "100"}]}], "]"}]], "Input"],
+
+Cell[BoxData["25164150"], "Output"]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{44, Automatic}, {Automatic, 104}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 350, 12, 28, "Input"],
+Cell[932, 36, 248, 9, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1217, 50, 426, 14, 48, "Input"],
+Cell[1646, 66, 35, 0, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1718, 71, 469, 15, 28, "Input"],
+Cell[2190, 88, 35, 0, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

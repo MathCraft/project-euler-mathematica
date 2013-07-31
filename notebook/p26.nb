@@ -1,0 +1,195 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4617,        186]
+NotebookOptionsPosition[      3736,        148]
+NotebookOutlinePosition[      4111,        165]
+CellTagsIndexPosition[      4068,        162]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 26", "Title"],
+
+Cell["\<\
+A unit fraction contains 1 in the numerator. The decimal representation of \
+the unit fractions with denominators 2 to 10 are given:
+
+1/2\t= \t0.5
+1/3\t= \t0.(3)
+1/4\t= \t0.25
+1/5\t= \t0.2
+1/6\t= \t0.1(6)
+1/7\t= \t0.(142857)
+1/8\t= \t0.125
+1/9\t= \t0.(1)
+1/10\t= \t0.1
+Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be \
+seen that 1/7 has a 6-digit recurring cycle.
+
+Find the value of d < 1000 for which 1/d contains the longest recurring cycle \
+in its decimal fraction part.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RealDigits", "[", 
+  RowBox[{"1", "/", "3"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", "3", "}"}], "}"}], ",", "0"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RealDigits", "[", 
+  RowBox[{"1", "/", "6"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", "6", "}"}]}], "}"}], ",", "0"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RealDigits", "[", 
+  RowBox[{"1", "/", "7"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "4", ",", "2", ",", "8", ",", "5", ",", "7"}], "}"}], 
+    "}"}], ",", "0"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RealDigits", "[", 
+  RowBox[{"1", "/", "121"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "8", ",", "2", ",", "6", ",", "4", ",", "4", ",", "6", ",", "2", ",", 
+      "8", ",", "0", ",", "9", ",", "9", ",", "1", ",", "7", ",", "3", ",", 
+      "5", ",", "5", ",", "3", ",", "7", ",", "1", ",", "9", ",", "0", ",", 
+      "0"}], "}"}], "}"}], ",", 
+   RowBox[{"-", "2"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Composition", "[", "\[IndentingNewLine]", 
+   RowBox[{
+   "First", ",", "\[IndentingNewLine]", "Last", ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"SortBy", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{"Length", "[", 
+         RowBox[{"Last", "[", "#", "]"}], "]"}], "&"}]}], "]"}], "&"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Cases", "[", 
+      RowBox[{"#", ",", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"n_", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"___", ",", "r_List"}], "}"}], ",", "_"}], "}"}]}], 
+         "}"}], "\[RuleDelayed]", " ", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", "r"}], "}"}]}]}], "]"}], "&"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"#", ",", 
+         RowBox[{"RealDigits", "[", "#", "]"}]}], "}"}], "&"}], "/@", "#"}], 
+     "&"}]}], "\[IndentingNewLine]", "]"}], "[", 
+  RowBox[{"1", "/", 
+   RowBox[{"Range", "[", "1000", "]"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["1", "983"]], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{100, Automatic}, {45, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 41, 0, 92, "Title"],
+Cell[623, 24, 527, 18, 334, "Text"],
+Cell[CellGroupData[{
+Cell[1175, 46, 86, 2, 28, "Input"],
+Cell[1264, 50, 122, 4, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1423, 59, 86, 2, 28, "Input"],
+Cell[1512, 63, 148, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1697, 73, 86, 2, 28, "Input"],
+Cell[1786, 77, 193, 6, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2016, 88, 88, 2, 28, "Input"],
+Cell[2107, 92, 394, 10, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2538, 107, 1117, 34, 131, "Input"],
+Cell[3658, 143, 50, 1, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

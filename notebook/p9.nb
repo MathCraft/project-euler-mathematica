@@ -1,0 +1,126 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      2866,        117]
+NotebookOptionsPosition[      2237,         89]
+NotebookOutlinePosition[      2611,        106]
+CellTagsIndexPosition[      2568,        103]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 9", "Title"],
+
+Cell["Goldbach\[CloseCurlyQuote]s other conjecture", "Subtitle"],
+
+Cell["\<\
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+
+a2 + b2 = c2
+For example, 32 + 42 = 9 + 16 = 25 = 52.
+
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.\
+\>", "Text"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+    RowBox[{"m", "^", "2"}], "-", 
+    RowBox[{"n", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"2", "*", "m", "*", "n"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c", "=", 
+   RowBox[{
+    RowBox[{"m", "^", "2"}], "+", 
+    RowBox[{"n", "^", "2"}]}]}], ";"}], "\[IndentingNewLine]"}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sols", "=", 
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "+", "b", "+", "c"}], "==", "1000"}], "&&", 
+     RowBox[{"m", ">", "0"}], "&&", 
+     RowBox[{"n", ">", "0"}], "&&", 
+     RowBox[{"a", ">", "0"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "m"}], "}"}], ",", "Integers"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"n", "\[Rule]", "5"}], ",", 
+    RowBox[{"m", "\[Rule]", "20"}]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Times", "@@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c"}], "}"}], "/.", 
+    RowBox[{"sols", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], ")"}]}]], "Input"],
+
+Cell[BoxData["31875000"], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1001, 1141},
+WindowMargins->{{1, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 40, 0, 92, "Title"],
+Cell[622, 24, 64, 0, 51, "Subtitle"],
+Cell[689, 26, 253, 8, 144, "Text"],
+Cell[945, 36, 410, 13, 80, "Input"],
+Cell[CellGroupData[{
+Cell[1380, 53, 369, 11, 28, "Input"],
+Cell[1752, 66, 160, 5, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1949, 76, 222, 7, 28, "Input"],
+Cell[2174, 85, 35, 0, 28, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

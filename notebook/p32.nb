@@ -1,0 +1,252 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6937,        243]
+NotebookOptionsPosition[      5934,        203]
+NotebookOutlinePosition[      6339,        221]
+CellTagsIndexPosition[      6296,        218]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 32", "Title"],
+
+Cell["\<\
+We shall say that an n-digit number is pandigital if it makes use of all the \
+digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 \
+through 5 pandigital.
+
+The product 7254 is unusual, as the identity, 39 \[Times] 186 = 7254, \
+containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+
+Find the sum of all products whose multiplicand/multiplier/product identity \
+can be written as a 1 through 9 pandigital.
+
+HINT: Some products can be obtained in more than one way so be sure to only \
+include it once in your sum.\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell["Solution 1", "Subsection"],
+
+Cell["\<\
+First realize that it can only have the following two disjoint scenarios: 
+1) 2-digit factor multipland and a 3-digit multiplier giving a 4-digit \
+product. 
+2) 1-digit factor multipland and a 4-digit multiplier giving a 4-digit \
+product. 
+All other length configurations are easy to rule out by checking the end \
+points.\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"$d", "=", 
+   RowBox[{"Range", "[", "9", "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f1", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"12", ",", "98"}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f2", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"123", ",", "987"}], "]"}]}], ";"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"res1", "=", 
+   RowBox[{"Last", "@", 
+    RowBox[{"Last", "@", 
+     RowBox[{"Reap", "@", 
+      RowBox[{"Table", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"If", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sort", "[", 
+            RowBox[{"Flatten", "[", 
+             RowBox[{"IntegerDigits", "/@", 
+              RowBox[{"{", 
+               RowBox[{"x1", ",", "x2", ",", 
+                RowBox[{"x1", "*", "x2"}]}], "}"}]}], "]"}], "]"}], "===", 
+           "$d"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Sow", "[", 
+           RowBox[{"{", 
+            RowBox[{"x1", ",", "x2"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+         "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"x1", ",", "f1"}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{"x2", ",", "f2"}], "}"}]}], "\[IndentingNewLine]", 
+       "]"}]}]}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["res1"], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"12", ",", "483"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18", ",", "297"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"27", ",", "198"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"28", ",", "157"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"39", ",", "186"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"42", ",", "138"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"48", ",", "159"}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f3", "=", 
+   RowBox[{"Range", "[", "9", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"f4", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"1234", ",", "8765"}], "]"}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"res2", "=", 
+  RowBox[{"Last", "@", 
+   RowBox[{"Last", "@", 
+    RowBox[{"Reap", "@", 
+     RowBox[{"Table", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"If", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Sort", "[", 
+           RowBox[{"Flatten", "[", 
+            RowBox[{"IntegerDigits", "/@", 
+             RowBox[{"{", 
+              RowBox[{"x1", ",", "x2", ",", 
+               RowBox[{"x1", "*", "x2"}]}], "}"}]}], "]"}], "]"}], "===", 
+          "$d"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Sow", "[", 
+          RowBox[{"{", 
+           RowBox[{"x1", ",", "x2"}], "}"}], "]"}]}], "\[IndentingNewLine]", 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"x1", ",", "f3"}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"x2", ",", "f4"}], "}"}]}], "\[IndentingNewLine]", 
+      "]"}]}]}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1738"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1963"}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"res2", "=", 
+  RowBox[{
+   RowBox[{"Composition", "[", "\[IndentingNewLine]", 
+    RowBox[{"Total", ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{"1", ",", 
+           RowBox[{"-", "1"}]}], "]"}], "]"}], "&"}], "/@", "#"}], "&"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"GatherBy", "[", 
+       RowBox[{"#", ",", "Last"}], "]"}], "&"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"#", ",", 
+          RowBox[{"Times", "@@", "#"}]}], "}"}], "&"}], "/@", "#"}], "&"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Join", "@@", "#"}], "&"}]}], "\[IndentingNewLine]", "]"}], "[", 
+   RowBox[{"{", 
+    RowBox[{"res1", ",", "res2"}], "}"}], "]"}]}]], "Input"],
+
+Cell[BoxData["45228"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1874, 1156},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification:>1.25 Inherited,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 41, 0, 114, "Title"],
+Cell[623, 24, 579, 13, 180, "Text"],
+Cell[CellGroupData[{
+Cell[1227, 41, 32, 0, 54, "Subsection"],
+Cell[1262, 43, 347, 8, 109, "Text"],
+Cell[1612, 53, 101, 3, 36, "Input"],
+Cell[1716, 58, 128, 4, 36, "Input"],
+Cell[1847, 64, 130, 4, 36, "Input"],
+Cell[1980, 70, 998, 26, 183, "Input"],
+Cell[CellGroupData[{
+Cell[3003, 100, 30, 0, 35, "Input"],
+Cell[3036, 102, 487, 16, 35, "Output"]
+}, Open  ]],
+Cell[3538, 121, 236, 7, 57, "Input"],
+Cell[CellGroupData[{
+Cell[3799, 132, 956, 25, 183, "Input"],
+Cell[4758, 159, 177, 6, 35, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4972, 170, 887, 26, 162, "Input"],
+Cell[5862, 198, 32, 0, 35, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

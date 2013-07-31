@@ -1,0 +1,72 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1617,         63]
+NotebookOptionsPosition[      1276,         45]
+NotebookOutlinePosition[      1650,         62]
+CellTagsIndexPosition[      1607,         59]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Solve", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"a", "^", "4"}], "+", 
+      RowBox[{"b", "^", "4"}], "+", 
+      RowBox[{"c", "^", "4"}], "+", 
+      RowBox[{"d", "^", "4"}], "-", 
+      RowBox[{"a", "*", 
+       RowBox[{"10", "^", "3"}]}], "-", 
+      RowBox[{"b", "*", 
+       RowBox[{"10", "^", "2"}]}], "-", 
+      RowBox[{"c", "*", 
+       RowBox[{"10", "^", "1"}]}], "-", "d"}], "\[Equal]", "0"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}], ",", "Integers"}], 
+   "\[IndentingNewLine]", "]"}], "//", "Timing"}]], "Input"],
+
+Cell[BoxData["$Aborted"], "Output"]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{84, Automatic}, {85, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 643, 18, 63, "Input"],
+Cell[1225, 42, 35, 0, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

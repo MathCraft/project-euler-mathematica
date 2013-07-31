@@ -1,0 +1,219 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6649,        210]
+NotebookOptionsPosition[      6098,        185]
+NotebookOutlinePosition[      6474,        202]
+CellTagsIndexPosition[      6431,        199]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Project Euler Problem 39", "Title"],
+
+Cell[BoxData[
+ RowBox[{"p", "=", "120"}]], "Input"],
+
+Cell[BoxData["Pythagorean"], "Input"],
+
+Cell["\<\
+Reference: http://en.wikipedia.org/wiki/Integer_triangle\
+\>", "Text"],
+
+Cell[BoxData[
+ RowBox[{"?", "Tria"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "*Fact*"}]], "Input"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["System`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["System`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["DampingFactor",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"DampingFactor", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["FactorSquareFreeList",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorSquareFreeList", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["Factor",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"Factor", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["FactorTerms",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"FactorTerms", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorComplete",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorComplete", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["FactorTermsList",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorTermsList", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["Factorial",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"Factorial", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["NProductFactors",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"NProductFactors", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["Factorial2",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"Factorial2", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["QFactorial",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"QFactorial", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorialMoment",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorialMoment", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["SpheroidalJoiningFactor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"SpheroidalJoiningFactor", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorialMomentGeneratingFunction",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {
+            "FactorialMomentGeneratingFunction", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["SpheroidalRadialFactor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"SpheroidalRadialFactor", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorialPower",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorialPower", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["TransferFunctionFactor",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"TransferFunctionFactor", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorInteger",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"FactorInteger", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["TrigFactor",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"TrigFactor", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorList",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3583935896-2333811", {"FactorList", "System`"}},
+          ButtonNote->"System`"], 
+         ButtonBox["TrigFactorList",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"TrigFactorList", "System`"}},
+          ButtonNote->"System`"]},
+        {
+         ButtonBox["FactorSquareFree",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3583935896-2333811", {"FactorSquareFree", "System`"}},
+          ButtonNote->"System`"], ""}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.475]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 174}, {-78, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 41, 0, 92, "Title"],
+Cell[623, 24, 51, 1, 28, "Input"],
+Cell[677, 27, 37, 0, 28, "Input"],
+Cell[717, 29, 80, 2, 30, "Text"],
+Cell[800, 33, 47, 1, 28, "Input"],
+Cell[CellGroupData[{
+Cell[872, 38, 49, 1, 28, "Input"],
+Cell[924, 41, 5146, 140, 264, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
