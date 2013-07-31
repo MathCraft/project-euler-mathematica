@@ -1,0 +1,34 @@
+# use glob syntax
+syntax: glob
+
+
+# back up files
+.DS_Store
+._*
+*~
+.nfs.*
+#*#
+*.bak
+*.old
+
+# logs
+
+# eclipse conf file
+#.settings
+#.classpath
+.project
+.manager
+
+
+# Java
+*.class
+
+# other scm
+.svn
+.CVS
+.hg*
+
+# R
+.Rhistory
+
+# use regexp syntax
