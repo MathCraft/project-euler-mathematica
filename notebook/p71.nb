@@ -1,25 +1,27 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 9.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[      2343,         95]
-NotebookOptionsPosition[      1856,         72]
-NotebookOutlinePosition[      2230,         89]
-CellTagsIndexPosition[      2187,         86]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
+Cell["\<\
+Solution -1 Naive solution (too slow)\
+\>", "Subsection"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Rational", "[", 
+    RowBox[{"n", ",", "d"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"d", ",", "1", ",", "N"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "d"}], "}"}]}], "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solution 1: silghtly better", "Subsection"],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{
   RowBox[{"(", 
@@ -37,14 +39,40 @@ Cell[BoxData[
             RowBox[{"3", "*", 
              RowBox[{"d", "/", "7"}]}], "]"}], ",", "d"}], "]"}], ",", 
          RowBox[{"{", 
-          RowBox[{"d", ",", "9", ",", "N"}], "}"}]}], "]"}]}], "]"}]}], ";"}],
+          RowBox[{"d", ",", "2", ",", "N"}], "}"}]}], "]"}]}], "]"}]}], ";"}],
     ")"}], "//", "Timing"}]], "Input"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-  "9.1388730000000002462456905050203204155`6.981492555396477", ",", "Null"}], 
-  "}"}]], "Output"]
+  "6.59145999999999965268671076046302914619`6.839581534203764", ",", "Null"}],
+   "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fractions", "//", "Length"}]], "Input"],
+
+Cell[BoxData["999999"], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fractions", "//", "RandomChoice"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["273325", "637759"]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Max", "[", "fractions", "]"}]], "Input"],
+
+Cell[BoxData[
+ FractionBox["3", "7"]], "Output"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -52,7 +80,7 @@ Cell[BoxData[
   RowBox[{"reducedProperFractions", "=", 
    RowBox[{"DeleteDuplicates", "@", 
     RowBox[{"Sort", "[", 
-     RowBox[{"Simplify", "/@", "f"}], "]"}]}]}], ";"}]], "Input"],
+     RowBox[{"Simplify", "/@", "fractions"}], "]"}]}]}], ";"}]], "Input"],
 
 Cell[CellGroupData[{
 
@@ -69,36 +97,351 @@ Cell[BoxData[
    FractionBox["428570", "999997"], ",", 
    FractionBox["3", "7"]}], "}"}]], "Output"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solution 2", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "*Fibona*"}]], "Input"],
+
+Cell[BoxData[{
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["System`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["System`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["Fibonacci",
+          BaseStyle->"InformationLink",
+          ButtonData:>{"Info3584370805-6851577", {"Fibonacci", "System`"}},
+          ButtonNote->"System`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.95]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]], "\n", 
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["CalculateParse`Content`CalculateInternal`", "InfoHeading"]}], 
+   True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["CalculateParse`Content`CalculateInternal`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["Fibonaccicoefficient",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3584370805-6851577", {
+            "Fibonaccicoefficient", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["Fibonaccifactorial",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3584370805-6851577", {
+            "Fibonaccifactorial", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["FibonacciFactorialConstant",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3584370805-6851577", {
+            "FibonacciFactorialConstant", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["ReciprocalFibonacciConstant",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info3584370805-6851577", {
+            "ReciprocalFibonacciConstant", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.2375]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]}], "Print", "InfoCell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Information", "[", "\"\<*Fibona*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[{
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["System`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["System`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["Fibonacci",
+          BaseStyle->"InformationLinkLF",
+          ButtonData:>{"Info3584370817-6851577", {"Fibonacci", "System`"}},
+          ButtonNote->"System`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.95]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]], "\n", 
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["CalculateParse`Content`CalculateInternal`", "InfoHeading"]}], 
+   True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["CalculateParse`Content`CalculateInternal`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["Fibonaccicoefficient",
+          BaseStyle->"InformationLinkLF",
+          
+          ButtonData:>{
+           "Info3584370817-6851577", {
+            "Fibonaccicoefficient", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["Fibonaccifactorial",
+          BaseStyle->"InformationLinkLF",
+          
+          ButtonData:>{
+           "Info3584370817-6851577", {
+            "Fibonaccifactorial", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["FibonacciFactorialConstant",
+          BaseStyle->"InformationLinkLF",
+          
+          ButtonData:>{
+           "Info3584370817-6851577", {
+            "FibonacciFactorialConstant", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"], 
+         ButtonBox["ReciprocalFibonacciConstant",
+          BaseStyle->"InformationLinkLF",
+          
+          ButtonData:>{
+           "Info3584370817-6851577", {
+            "ReciprocalFibonacciConstant", 
+             "CalculateParse`Content`CalculateInternal`"}},
+          ButtonNote->"CalculateParse`Content`CalculateInternal`"]}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.2375]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]}], "Print", "InfoCell"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "GCD"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"GCD\\\", \\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"]\\\"}]\\) gives the greatest common divisor of the \
+\\!\\(\\*SubscriptBox[StyleBox[\\\"n\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
+\"TI\\\"]]\\). \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/GCD"]}]], "Print", "PrintUsage",
+ CellTags->"Info3584369322-6851577"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Divisors"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Divisors\\\", \\\"[\\\", \
+StyleBox[\\\"n\\\", \\\"TI\\\"], \\\"]\\\"}]\\) gives a list of the integers \
+that divide \\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\). \"\>", "MSG"], 
+  "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Divisors"]}]], "Print", "PrintUsage",
+ CellTags->"Info3584370325-6851577"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ReplaceRepeated", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "5"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n_", ",", "a_", ",", 
+       RowBox[{"b_", "/;", 
+        RowBox[{"b", "<", "1000000"}]}]}], "}"}], "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"n", "+", "1"}], ",", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"a", "+", "3"}], ")"}], "/", 
+        RowBox[{"GCD", "[", 
+         RowBox[{
+          RowBox[{"a", "+", "3"}], ",", 
+          RowBox[{"b", "+", "7"}]}], "]"}]}], ",", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"b", "+", "7"}], ")"}], "/", 
+        RowBox[{"GCD", "[", 
+         RowBox[{
+          RowBox[{"a", "+", "3"}], ",", 
+          RowBox[{"b", "+", "7"}]}], "]"}]}]}], "}"}]}], ",", 
+    RowBox[{"MaxIterations", "\[Rule]", "Infinity"}]}], "\[IndentingNewLine]",
+    "]"}], "//", "Timing"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.49641099999999993563903899485012516379`6.19565080528223", ",", 
+   RowBox[{"{", 
+    RowBox[{"142858", ",", "428573", ",", "1000004"}], "}"}]}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2"}], "}"}], "//.", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a_", "/;", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"Divisors", "[", "a", "]"}], "]"}], "<", "500"}]}], ",", 
+     "b_"}], "}"}], "\[RuleDelayed]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Binomial", "[", 
+      RowBox[{
+       RowBox[{"b", "+", "1"}], ",", "2"}], "]"}], ",", 
+     RowBox[{"b", "+", "1"}]}], "}"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"76576500", ",", "12376"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2"}], "}"}], "//.", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a_", "/;", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"Divisors", "[", "a", "]"}], "]"}], "<", "500"}]}], ",", 
+     "b_"}], "}"}], "\[RuleDelayed]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "+", "b"}], ",", 
+     RowBox[{"b", "+", "1"}]}], "}"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"76576500", ",", "12376"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Length", "@", "Divisors"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"28", ",", "8"}], "}"}], "//.", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a_", "/;", 
+      RowBox[{
+       RowBox[{"Length", "[", 
+        RowBox[{"Divisors", "[", "a", "]"}], "]"}], "<", "500"}]}], ",", 
+     "b_"}], "}"}], "\[RuleDelayed]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"a", "+", "b"}], ",", 
+     RowBox[{"b", "+", "1"}]}], "}"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"76576500", ",", "12376"}], "}"}]], "Output"]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{1873, 1156},
+WindowSize->{1440, 852},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 ShowSelection->True,
+Magnification:>1.25 Inherited,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2013)",
 StyleDefinitions->"Default.nb"
 ]
-(* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[CellGroupData[{
-Cell[579, 22, 576, 18, 28, "Input"],
-Cell[1158, 42, 138, 4, 28, "Output"]
-}, Open  ]],
-Cell[1311, 49, 194, 5, 28, "Input"],
-Cell[CellGroupData[{
-Cell[1530, 58, 138, 4, 28, "Input"],
-Cell[1671, 64, 169, 5, 48, "Output"]
-}, Open  ]]
-}
-]
-*)
-
-(* End of internal cache information *)

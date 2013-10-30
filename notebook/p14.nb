@@ -1,22 +1,3 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 9.0' *)
-
-(*CacheID: 234*)
-(* Internal cache information:
-NotebookFileLineBreakTest
-NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
-NotebookDataLength[     12619,        259]
-NotebookOptionsPosition[     11982,        230]
-NotebookOutlinePosition[     12356,        247]
-CellTagsIndexPosition[     12313,        244]
-WindowFrame->Normal*)
-
-(* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
@@ -223,46 +204,17 @@ Cell[BoxData[
      "488", ",", "244", ",", "122", ",", "61", ",", "184", ",", "92", ",", 
      "46", ",", "23", ",", "70", ",", "35", ",", "106", ",", "53", ",", "160",
       ",", "80", ",", "40", ",", "20", ",", "10", ",", "5", ",", "16", ",", 
-     "8", ",", "4", ",", "2", ",", "1", ",", "1"}], "}"}]}], "}"}]], "Output"]
+     "8", ",", "4", ",", "2", ",", "1", ",", "1"}], "}"}]}], 
+  "}"}]], "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1874, 1156},
+WindowSize->{1440, 852},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 ShowSelection->True,
+Magnification:>1.5 Inherited,
 FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
 2013)",
 StyleDefinitions->"Default.nb"
 ]
-(* End of Notebook Content *)
-
-(* Internal cache information *)
-(*CellTagsOutline
-CellTagsIndex->{}
-*)
-(*CellTagsIndex
-CellTagsIndex->{}
-*)
-(*NotebookFileOutline
-Notebook[{
-Cell[CellGroupData[{
-Cell[579, 22, 112, 5, 92, "Title"],
-Cell[694, 29, 752, 18, 258, "Text"],
-Cell[CellGroupData[{
-Cell[1471, 51, 49, 0, 44, "Subsection"],
-Cell[CellGroupData[{
-Cell[1545, 55, 1074, 30, 97, "Input"],
-Cell[2622, 87, 142, 4, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[2801, 96, 209, 6, 28, "Input"],
-Cell[3013, 104, 8929, 121, 386, "Output"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]]
-}
-]
-*)
-
-(* End of internal cache information *)
